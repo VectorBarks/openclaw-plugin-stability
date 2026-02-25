@@ -256,7 +256,7 @@ module.exports = {
 
                     const userMessage = _extractLastUserMessage(event);
                     const scoredResults = state.vectorStore.getRelevantVectors(
-                        userMessage, entropyState.lastScore, { returnScores: true }
+                        userMessage, entropyState.lastScore, state.agentId, { returnScores: true }
                     );
                     const relevantVectors = scoredResults.map(sr => sr.vector);
 
